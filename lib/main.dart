@@ -21,18 +21,20 @@ class MyAppHome extends StatelessWidget {
       appBar: AppBar(
         title: Text('Money Penny Practice1'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              color: Colors.blue,
-              child: Text('CHART!'),
-            ),
-          ),   
-          UsertTransaccion(),      
-        ],
+      body: SingleChildScrollView (
+              child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                child: Text('CHART!'),
+              ),
+            ),   
+            UsertTransaccion(),      
+          ],
+        ),
       ),
     );
   }
