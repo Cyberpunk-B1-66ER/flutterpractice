@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import './widgets/usertransaccion.dart';
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -32,7 +31,7 @@ class MyAppHome extends StatelessWidget {
               child: Text('CHART!'),
             ),
           ),   
-          UserTransaccion(),      
+          UsertTransaccion(),      
         ],
       ),
     );

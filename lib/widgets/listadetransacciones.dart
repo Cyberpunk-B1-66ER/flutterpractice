@@ -3,8 +3,8 @@ import 'package:intl/intl.dart';
 import '../models/transaccion.dart';
 class ListaTransaccion extends StatelessWidget{  
   final List<Transaccion> transax;
-  @override
   ListaTransaccion(this.transax);
+  @override
   Widget build(BuildContext context) {
     return Column(
             children: transax.map((tx) {
