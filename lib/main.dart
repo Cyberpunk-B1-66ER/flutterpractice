@@ -31,7 +31,7 @@ class MyAppHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Money Penny'),
+          title: Text('Money Penny Practice1'),
         ),
         body: Column(
           children: <Widget>[
