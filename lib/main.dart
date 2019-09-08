@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './models/transaccion.dart';
 import 'package:intl/intl.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -45,11 +46,24 @@ class MyAppHome extends StatelessWidget {
             ),
             Card(
               elevation: 5,
-              child: Column(
-                children: <Widget>[
-                  TextField(),
-                  TextField(),
-                ],
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Title'),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Amount'),
+                    ),
+                    FlatButton(
+                      child: Text('Add Transaccion'),
+                      onPressed: () {},
+                      textColor: Colors.purple,
+                    )
+                  ],
+                ),
               ),
             ),
             Column(
