@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './models/transaccion.dart';
-
+import 'package:intl/intl.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -34,12 +34,22 @@ class MyAppHome extends StatelessWidget {
           title: Text('Money Penny Practice1'),
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
               width: double.infinity,
               child: Card(
                 color: Colors.blue,
                 child: Text('CHART!'),
+              ),
+            ),
+            Card(
+              elevation: 5,
+              child: Column(
+                children: <Widget>[
+                  TextField(),
+                  TextField(),
+                ],
               ),
             ),
             Column(
@@ -64,8 +74,12 @@ class MyAppHome extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(tx.title,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
-                        Text(tx.date.toString()),
+                        Text(
+                          tx.title,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        Text(DateFormat('EEE,d/M/yy H:m').format(tx.date)),
                       ],
                     )
                   ],
