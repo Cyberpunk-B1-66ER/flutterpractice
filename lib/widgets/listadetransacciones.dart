@@ -8,9 +8,8 @@ class ListaTransaccion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
-      child: SingleChildScrollView(
-        child: Column(
+      height: 300,      
+        child: ListView(
           children: transax.map((tx) {
             return Card(
               child: Row(
@@ -43,8 +42,7 @@ class ListaTransaccion extends StatelessWidget {
               ),
             );
           }).toList(),
-        ),
-      ),
+        ),      
     );
   }
 }
