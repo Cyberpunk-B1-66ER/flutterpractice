@@ -20,7 +20,7 @@ class ListaTransaccion extends StatelessWidget {
                     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      '\$ ${transax[index].amount}',
+                      '\$' + transax[index].amount.toStringAsFixed(2),
                       style: TextStyle(
                           color: Colors.purple,
                           fontSize: 18,

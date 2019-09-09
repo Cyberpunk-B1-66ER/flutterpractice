@@ -5,6 +5,14 @@ class NuevaTransaccion extends StatelessWidget {
   final amountControler = TextEditingController();
   final Function nt;
   NuevaTransaccion(this.nt);
+  void nuevatransaccion() {
+    final enterTitle=titleControler.text;
+    final enterAmount=double.parse(amountControler.text);
+    if (enterTitle.isEmpty || enterAmount <=0){
+      return;
+    }
+    nt(enterTitle,enterAmount);
+  }
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -17,6 +25,7 @@ class NuevaTransaccion extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(labelText: 'Title'),
                     controller: titleControler,
+                    onSubmitted: (_)=> nuevatransaccion(),
                     /* onChanged: (val) {
                         titleInput = val;
                       }, */
@@ -24,13 +33,13 @@ class NuevaTransaccion extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(labelText: 'Amount'),
                     controller: amountControler,
+                    keyboardType: TextInputType.numberWithOptions(decimal: true),
+                    onSubmitted: (_)=> nuevatransaccion(),
                     //onChanged: (val) => amountInput = val,
                   ),
                   FlatButton(
                     child: Text('Add Transaccion'),
-                    onPressed: () {
-                      nt(titleControler.text,double.parse(amountControler.text));
-                    },
+                    onPressed: nuevatransaccion,
                     textColor: Colors.purple,
                   )
                 ],
