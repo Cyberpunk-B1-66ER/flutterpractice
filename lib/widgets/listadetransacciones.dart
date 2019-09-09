@@ -9,8 +9,8 @@ class ListaTransaccion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 300,      
-        child: ListView(
-          children: transax.map((tx) {
+        child: ListView.builder(
+          itemBuilder: (ctx,index){
             return Card(
               child: Row(
                 children: <Widget>[
@@ -20,7 +20,7 @@ class ListaTransaccion extends StatelessWidget {
                     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      '\$ ${tx.amount}',
+                      '\$ ${transax[index].amount}',
                       style: TextStyle(
                           color: Colors.purple,
                           fontSize: 18,
@@ -31,17 +31,18 @@ class ListaTransaccion extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        tx.title,
+                        transax[index].title,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
                       ),
-                      Text(DateFormat('EEE,d/M/yy H:m').format(tx.date)),
+                      Text(DateFormat('EEE,d/M/yy H:m').format(transax[index].date)),
                     ],
                   )
                 ],
               ),
             );
-          }).toList(),
+          },
+          itemCount: transax.length,          
         ),      
     );
   }
